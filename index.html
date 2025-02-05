@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        function searchContent() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <header>
         <h1>Cricket History Explorer</h1>
@@ -20,10 +34,11 @@
                 <li><a href="#players">Legendary Players</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <input type="text" id="search" placeholder="Search...">
         </nav>
     </header>
 
-    <!-- Hero Section -->
+   
     <section class="hero">
         <div class="hero-text">
             <h2>Discover the Greatest Moments in Cricket</h2>
@@ -41,9 +56,14 @@
                 <p>The first Test match was played between England and Australia in 1877 at the MCG.</p>
             </div>
             <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLbmOG-I_NoCS6fpvwI5nb34w4LEOEKh7Z1Q&s" alt="World Cup">
+                <img src="C:\Users\ADMIN\OneDrive\Documents\first world cup.jpg" alt="World Cup">
                 <h3>First Cricket World Cup (1975)</h3>
                 <p>The inaugural Cricket World Cup was hosted by England in 1975, and West Indies won.</p>
+            </div>
+            <div class="card">
+                <img src="C:\Users\ADMIN\OneDrive\Documents\Cricket history.jpg" alt="Historical Cricket Match">
+                <h3>Historical Cricket Match</h3>
+                <p>An early cricket match in Victoria, Australia, showcasing the game's rich history.</p>
             </div>
         </div>
     </section>
@@ -75,7 +95,7 @@
                 <p>Bradman, with an average of 99.94 in Test cricket, is considered the greatest batsman ever.</p>
             </div>
             <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-PNoM5uQlkPP5ahy0S6lh-eiDan2QsvpsUA&s" alt=""Virat kohli">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-PNoM5uQlkPP5ahy0S6lh-eiDan2QsvpsUA&s" alt="Virat kohli">
                 <h3>Virat Kohli</h3>
                 <p>One of the modern greats, Kohli has redefined consistency in all formats.</p>
             </div>
@@ -92,6 +112,5 @@
     <footer>
         <p>&copy; 2025 Cricket History Explorer | All Rights Reserved</p>
     </footer>
-
 </body>
 </html>
